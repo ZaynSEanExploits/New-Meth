@@ -1,0 +1,219 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local StartButton = Instance.new("TextButton")
+local TimerButton = Instance.new("TextButton")
+local CloseButton = Instance.new("TextButton")
+local AppearButton = Instance.new("TextButton")
+local TextLabel = Instance.new("TextLabel")
+local TextBox = Instance.new("TextBox")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.Active = true
+Frame.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+Frame.BorderColor3 = Color3.fromRGB(173, 173, 173)
+Frame.BorderSizePixel = 4
+Frame.Position = UDim2.new(0.00565683097, 0, 0.0534458756, 0)
+Frame.Size = UDim2.new(0, 124, 0, 129)
+Frame.Visible = false
+
+StartButton.Name = "StartButton"
+StartButton.Parent = Frame
+StartButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+StartButton.Position = UDim2.new(0.0350389332, 0, 0.385463417, 0)
+StartButton.Size = UDim2.new(0, 115, 0, 28)
+StartButton.Style = Enum.ButtonStyle.RobloxRoundDefaultButton
+StartButton.Font = Enum.Font.SciFi
+StartButton.Text = "START DUPPING"
+StartButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+StartButton.TextSize = 14.000
+
+TimerButton.Name = "TimerButton"
+TimerButton.Parent = Frame
+TimerButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TimerButton.Position = UDim2.new(0.0431034565, 0, 0.676731646, 0)
+TimerButton.Size = UDim2.new(0, 115, 0, 28)
+TimerButton.Style = Enum.ButtonStyle.RobloxRoundDefaultButton
+TimerButton.Font = Enum.Font.SciFi
+TimerButton.LineHeight = 1.060
+TimerButton.Text = "START TIMER"
+TimerButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TimerButton.TextSize = 14.000
+
+CloseButton.Name = "CloseButton"
+CloseButton.Parent = Frame
+CloseButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CloseButton.Position = UDim2.new(0.0431034565, 0, 0.0844225734, 0)
+CloseButton.Size = UDim2.new(0, 115, 0, 28)
+CloseButton.Style = Enum.ButtonStyle.RobloxRoundDefaultButton
+CloseButton.Font = Enum.Font.SciFi
+CloseButton.Text = "CLOSE"
+CloseButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+CloseButton.TextSize = 14.000
+
+AppearButton.Name = "AppearButton"
+AppearButton.Parent = ScreenGui
+AppearButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+AppearButton.Position = UDim2.new(0.0219987426, 0, 0.888888896, 0)
+AppearButton.Size = UDim2.new(0, 200, 0, 50)
+AppearButton.Style = Enum.ButtonStyle.RobloxRoundButton
+AppearButton.Font = Enum.Font.SciFi
+AppearButton.Text = "CLICK HERE!!"
+AppearButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+AppearButton.TextSize = 40.000
+
+TextLabel.Parent = ScreenGui
+TextLabel.Active = true
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0.369578868, 0, 0.229254559, 0)
+TextLabel.Size = UDim2.new(0, 490, 0, 138)
+TextLabel.Visible = false
+TextLabel.Font = Enum.Font.SciFi
+TextLabel.Text = "0:00"
+TextLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
+TextLabel.TextSize = 95.000
+TextLabel.TextStrokeTransparency = 0.000
+
+TextBox.Parent = TextLabel
+TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.BackgroundTransparency = 1.000
+TextBox.Position = UDim2.new(0.0204081628, 0, 0, 0)
+TextBox.Size = UDim2.new(0, 480, 0, 41)
+TextBox.Font = Enum.Font.SciFi
+TextBox.Text = "POWERED BY: JhasyCakes"
+TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
+TextBox.TextSize = 31.000
+TextBox.TextStrokeTransparency = 0.000
+
+-- Scripts:
+
+local function BLKLCG_fake_script() -- StartButton.LocalScript 
+	local script = Instance.new('LocalScript', StartButton)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		print("Sit Thight Enjoy Dupping")
+		workspace.__THINGS.__REMOTES.MAIN:FireServer("b", "bank withdraw")
+		local function Bank(id)
+			local self = {}
+			function self:withdraw(pets, gems)
+				local A_1 = 
+					{
+						[1] = id, 
+						[2] = 
+						{
+						}, 
+						[3] = gems
+					}
+				local Event = game:GetService("Workspace")["__THINGS"]["__REMOTES"]["bank withdraw"]Event:InvokeServer(A_1)
+			end
+			return self
+		end
+		--//
+		local bankid = "dbdba7cf-eb80-4904-a358-3ef5892ae35a"--bank
+		for i = 1, 20000, 3 do
+			Bank(bankid):withdraw({}, 6)
+			print("Rebooting request... (SUCCESSFULL)")
+			print("SUCCESSFULLY REBOOT SYSTEM...")
+			print("File Deleted"..i)
+			task.wait(0.1)
+		end
+	end)
+end
+coroutine.wrap(BLKLCG_fake_script)()
+local function FDZYXLC_fake_script() -- TimerButton.LocalScript 
+	local script = Instance.new('LocalScript', TimerButton)
+
+	local frame = script.Parent.Parent.Parent.TextLabel
+	local open = false
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		if frame.Visible == false then
+			frame.Visible = true
+		else
+			frame.Visible = false
+		end
+	end)
+end
+coroutine.wrap(FDZYXLC_fake_script)()
+local function WGKAPDV_fake_script() -- Frame.LocalScript 
+	local script = Instance.new('LocalScript', Frame)
+
+	script.Parent.Active = true
+	script.Parent.Draggable = true
+end
+coroutine.wrap(WGKAPDV_fake_script)()
+local function QRFIQCD_fake_script() -- CloseButton.LocalScript 
+	local script = Instance.new('LocalScript', CloseButton)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Visible = false
+	end)
+end
+coroutine.wrap(QRFIQCD_fake_script)()
+local function DMJFJE_fake_script() -- AppearButton.LocalScript 
+	local script = Instance.new('LocalScript', AppearButton)
+
+	local frame = script.Parent.Parent.Frame
+	local open = false
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		if frame.Visible == false then
+			frame.Visible = true
+		end
+	end)
+end
+coroutine.wrap(DMJFJE_fake_script)()
+local function RFLNX_fake_script() -- TextLabel.LocalScript 
+	local script = Instance.new('LocalScript', TextLabel)
+
+	local RunService = game:GetService("RunService")
+	
+	local TIMER_BINDING_NAME = "Timer"
+	
+	local label = script.Parent
+	
+	local function startTimer(timerLeft)
+		local delayEvent = Instance.new("BindableEvent")
+		
+		RunService:BindToRenderStep(TIMER_BINDING_NAME, Enum.RenderPriority.Last.Value - 1, function(delta)
+			-- delta is the time since the last fram
+			-- 01:30:01
+			timerLeft -= delta
+			
+			local minutes = math.floor(timerLeft / 60)
+			local seconds = math.floor(timerLeft % 60)
+			local hundreths = math.floor(timerLeft % 1 * 100)
+				
+			label.Text = string.format("%02i:%02i:%02i", minutes, seconds, hundreths)
+			
+			if timerLeft <= 0 then
+				delayEvent:Fire()
+				RunService:UnbindFromRenderStep(TIMER_BINDING_NAME)
+			end
+			
+		end)
+		
+		delayEvent.Event:Wait()	
+	end
+	
+	startTimer(1500)
+	label.Text = "Now Close And Rejoin PS Happy Dupping!"
+end
+coroutine.wrap(RFLNX_fake_script)()
+local function FHOSZPK_fake_script() -- TextLabel.LocalScript 
+	local script = Instance.new('LocalScript', TextLabel)
+
+	script.Parent.Active = true
+	script.Parent.Draggable = true
+end
+coroutine.wrap(FHOSZPK_fake_script)()
